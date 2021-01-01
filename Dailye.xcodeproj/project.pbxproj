@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0415DB35259F551300E850B7 /* ArticleListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415DB34259F551300E850B7 /* ArticleListResponse.swift */; };
+		0415DB38259F55FA00E850B7 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415DB37259F55FA00E850B7 /* Article.swift */; };
+		0415DB3B259F563600E850B7 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415DB3A259F563600E850B7 /* Source.swift */; };
 		04CCF573259AA28B0019654A /* DailyeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCF572259AA28B0019654A /* DailyeApp.swift */; };
 		04CCF575259AA28B0019654A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCF574259AA28B0019654A /* ContentView.swift */; };
 		04CCF577259AA28F0019654A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CCF576259AA28F0019654A /* Assets.xcassets */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0415DB34259F551300E850B7 /* ArticleListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListResponse.swift; sourceTree = "<group>"; };
+		0415DB37259F55FA00E850B7 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		0415DB3A259F563600E850B7 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		04CCF56F259AA28B0019654A /* Dailye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dailye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04CCF572259AA28B0019654A /* DailyeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyeApp.swift; sourceTree = "<group>"; };
 		04CCF574259AA28B0019654A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +43,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0415DB33259F518F00E850B7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0415DB34259F551300E850B7 /* ArticleListResponse.swift */,
+				0415DB37259F55FA00E850B7 /* Article.swift */,
+				0415DB3A259F563600E850B7 /* Source.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		04CCF566259AA28B0019654A = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +72,7 @@
 		04CCF571259AA28B0019654A /* Dailye */ = {
 			isa = PBXGroup;
 			children = (
+				0415DB33259F518F00E850B7 /* Model */,
 				04CCF572259AA28B0019654A /* DailyeApp.swift */,
 				04CCF574259AA28B0019654A /* ContentView.swift */,
 				04CCF576259AA28F0019654A /* Assets.xcassets */,
@@ -144,7 +161,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0415DB35259F551300E850B7 /* ArticleListResponse.swift in Sources */,
 				04CCF57C259AA28F0019654A /* Persistence.swift in Sources */,
+				0415DB38259F55FA00E850B7 /* Article.swift in Sources */,
+				0415DB3B259F563600E850B7 /* Source.swift in Sources */,
 				04CCF575259AA28B0019654A /* ContentView.swift in Sources */,
 				04CCF573259AA28B0019654A /* DailyeApp.swift in Sources */,
 				04CCF57F259AA28F0019654A /* Dailye.xcdatamodeld in Sources */,
