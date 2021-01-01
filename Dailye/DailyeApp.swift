@@ -1,10 +1,3 @@
-//
-//  DailyeApp.swift
-//  Dailye
-//
-//  Created by Mac on 29.12.20.
-//
-
 import SwiftUI
 
 @main
@@ -13,8 +6,9 @@ struct DailyeApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//            ContentView()
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            ArticleListView(viewModel: ArtitcleListViewModel())
         }
     }
 }
