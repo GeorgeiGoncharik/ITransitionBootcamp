@@ -3,7 +3,10 @@ import SwiftUI
 struct ArticleListView: View {
     @ObservedObject var viewModel: ArtitcleListViewModel
     var body: some View {
-        Text("Status: \(viewModel.response?.status ?? "still")")
+        List(viewModel.articles){ article in
+            ArticleView(article: article)
+        }
+            .overlay(StatusOverlayView(viewModel: viewModel))
             .onAppear { self.viewModel.loadIfNeeded() }
     }
 }

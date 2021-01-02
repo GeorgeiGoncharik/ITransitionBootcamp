@@ -16,6 +16,8 @@
 		0415DB4E259FC85E00E850B7 /* JSONSchemaSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415DB4D259FC85E00E850B7 /* JSONSchemaSupport.swift */; };
 		0415DB52259FC94700E850B7 /* URL+NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415DB51259FC94700E850B7 /* URL+NewsAPI.swift */; };
 		0415DB56259FE49E00E850B7 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0415DB55259FE49E00E850B7 /* Keys.plist */; };
+		0415DB5A259FEEBB00E850B7 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415DB59259FEEBB00E850B7 /* ArticleView.swift */; };
+		0415DB5D25A083EC00E850B7 /* StatusOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415DB5C25A083EC00E850B7 /* StatusOverlayView.swift */; };
 		04CCF573259AA28B0019654A /* DailyeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCF572259AA28B0019654A /* DailyeApp.swift */; };
 		04CCF575259AA28B0019654A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCF574259AA28B0019654A /* ContentView.swift */; };
 		04CCF577259AA28F0019654A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CCF576259AA28F0019654A /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 		0415DB4D259FC85E00E850B7 /* JSONSchemaSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONSchemaSupport.swift; sourceTree = "<group>"; };
 		0415DB51259FC94700E850B7 /* URL+NewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+NewsAPI.swift"; sourceTree = "<group>"; };
 		0415DB55259FE49E00E850B7 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		0415DB59259FEEBB00E850B7 /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
+		0415DB5C25A083EC00E850B7 /* StatusOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusOverlayView.swift; sourceTree = "<group>"; };
 		04CCF56F259AA28B0019654A /* Dailye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dailye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04CCF572259AA28B0019654A /* DailyeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyeApp.swift; sourceTree = "<group>"; };
 		04CCF574259AA28B0019654A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				0415DB3E259FC56100E850B7 /* ArticleListView.swift */,
+				0415DB59259FEEBB00E850B7 /* ArticleView.swift */,
+				0415DB5C25A083EC00E850B7 /* StatusOverlayView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -215,7 +221,9 @@
 				04CCF575259AA28B0019654A /* ContentView.swift in Sources */,
 				04CCF573259AA28B0019654A /* DailyeApp.swift in Sources */,
 				04CCF57F259AA28F0019654A /* Dailye.xcdatamodeld in Sources */,
+				0415DB5A259FEEBB00E850B7 /* ArticleView.swift in Sources */,
 				0415DB4E259FC85E00E850B7 /* JSONSchemaSupport.swift in Sources */,
+				0415DB5D25A083EC00E850B7 /* StatusOverlayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
