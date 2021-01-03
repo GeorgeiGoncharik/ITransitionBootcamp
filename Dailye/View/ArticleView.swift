@@ -1,31 +1,69 @@
 import SwiftUI
+import URLImage
 
 struct ArticleView: View {
     var article: Article
     var body: some View {
-        VStack(alignment: .leading){
-            Text(article.title ?? "")
-                .font(.title2)
-                .foregroundColor(.primary)
-                .lineLimit(2)
-            Group{
-                HStack(){
-                    Text(article.author ?? "")
-                        .lineLimit(1)
-                    Spacer()
-                    Text(article.source.name)
+        ZStack{
+            RoundedRectangle(cornerRadius: cornerRadius)
+                .fill()
+                .foregroundColor(.white)
+                .shadow(radius: shadowRadius)
+            VStack(alignment: .leading){
+                if let urlToImage = article.urlToImage, let url = URL(string: urlToImage){
+                    URLImage(url: url,
+                             empty: { EmptyView() },
+                             inProgress: { _ in EmptyView() },
+                             failure: { _, _ in Text("Downloading has failed!")
+                             },
+                             content: { image, _ in
+                                 image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .cornerRadius(cornerRadius)
+                              })
                 }
-                Text(article.publishedAt != nil
-                        ? "Published at \(article.publishedAt!.description)"
-                        : "")
+                Group{
+                    if let title = article.title{
+                        Text(title)
+                            .font(.title3)
+                    }
+                    if let desc = article.articleDescription{
+                        Text(desc)
+                            .lineLimit(descriptionLineLimit)
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                    }
+                    HStack{
+                        if let published = article.publishedAt, let passed = Date() - published{
+                            if let hours = passed.hour, hours < 48 {
+                                Text("\(article.source.name)・\(hours) hours ago")
+                            } else {
+                                if let days = passed.day{
+                                    Text("\(article.source.name)・\(days) days ago")
+                                }
+                            }
+                        }
+                        Spacer()
+                    }
+                    .lineLimit(footLineLimit)
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+                    .padding(.bottom)
+                }
+                .padding(.horizontal)
+                .padding(.vertical, smallPadding)
             }
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-            //Divider()
-            Text(article.articleDescription ?? "")
         }
-            .padding()
+        .padding(.bottom)
     }
+    
+    //MARK: - Constants
+    let cornerRadius: CGFloat = 6
+    let shadowRadius: CGFloat = 4
+    let descriptionLineLimit: Int = 2
+    let smallPadding: CGFloat = 1
+    let footLineLimit: Int = 1
 }
 
 struct ArticleView_Previews: PreviewProvider {

@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0401F3FC25A1C9F400147FC9 /* Date+DiffBetweenTwoDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401F3FB25A1C9F400147FC9 /* Date+DiffBetweenTwoDates.swift */; };
 		0415DB35259F551300E850B7 /* ArticleListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415DB34259F551300E850B7 /* ArticleListResponse.swift */; };
 		0415DB38259F55FA00E850B7 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415DB37259F55FA00E850B7 /* Article.swift */; };
 		0415DB3B259F563600E850B7 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415DB3A259F563600E850B7 /* Source.swift */; };
@@ -18,6 +19,7 @@
 		0415DB56259FE49E00E850B7 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0415DB55259FE49E00E850B7 /* Keys.plist */; };
 		0415DB5A259FEEBB00E850B7 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415DB59259FEEBB00E850B7 /* ArticleView.swift */; };
 		0415DB5D25A083EC00E850B7 /* StatusOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415DB5C25A083EC00E850B7 /* StatusOverlayView.swift */; };
+		0415DB6525A099E100E850B7 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0415DB6425A099E100E850B7 /* URLImage */; };
 		04CCF573259AA28B0019654A /* DailyeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCF572259AA28B0019654A /* DailyeApp.swift */; };
 		04CCF575259AA28B0019654A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCF574259AA28B0019654A /* ContentView.swift */; };
 		04CCF577259AA28F0019654A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CCF576259AA28F0019654A /* Assets.xcassets */; };
@@ -27,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0401F3FB25A1C9F400147FC9 /* Date+DiffBetweenTwoDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DiffBetweenTwoDates.swift"; sourceTree = "<group>"; };
 		0415DB34259F551300E850B7 /* ArticleListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListResponse.swift; sourceTree = "<group>"; };
 		0415DB37259F55FA00E850B7 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		0415DB3A259F563600E850B7 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0415DB6525A099E100E850B7 /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +96,7 @@
 			children = (
 				0415DB46259FC7B000E850B7 /* URLSession+ArticleListResponse.swift */,
 				0415DB51259FC94700E850B7 /* URL+NewsAPI.swift */,
+				0401F3FB25A1C9F400147FC9 /* Date+DiffBetweenTwoDates.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -156,6 +161,9 @@
 			dependencies = (
 			);
 			name = Dailye;
+			packageProductDependencies = (
+				0415DB6425A099E100E850B7 /* URLImage */,
+			);
 			productName = Dailye;
 			productReference = 04CCF56F259AA28B0019654A /* Dailye.app */;
 			productType = "com.apple.product-type.application";
@@ -183,6 +191,9 @@
 				Base,
 			);
 			mainGroup = 04CCF566259AA28B0019654A;
+			packageReferences = (
+				0415DB6325A099E100E850B7 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 04CCF570259AA28B0019654A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -218,6 +229,7 @@
 				0415DB43259FC5A200E850B7 /* ArticleListViewModel.swift in Sources */,
 				0415DB3B259F563600E850B7 /* Source.swift in Sources */,
 				0415DB47259FC7B000E850B7 /* URLSession+ArticleListResponse.swift in Sources */,
+				0401F3FC25A1C9F400147FC9 /* Date+DiffBetweenTwoDates.swift in Sources */,
 				04CCF575259AA28B0019654A /* ContentView.swift in Sources */,
 				04CCF573259AA28B0019654A /* DailyeApp.swift in Sources */,
 				04CCF57F259AA28F0019654A /* Dailye.xcdatamodeld in Sources */,
@@ -412,6 +424,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0415DB6325A099E100E850B7 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0415DB6425A099E100E850B7 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0415DB6325A099E100E850B7 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		04CCF57D259AA28F0019654A /* Dailye.xcdatamodeld */ = {
