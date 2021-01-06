@@ -27,6 +27,7 @@ struct ArticleView: View {
                     if let title = article.title{
                         Text(title)
                             .font(.title3)
+                            .foregroundColor(.primary)
                     }
                     if let desc = article.articleDescription{
                         Text(desc)
@@ -55,7 +56,7 @@ struct ArticleView: View {
                 .padding(.vertical, smallPadding)
             }
         }
-        .padding(.bottom)
+        .padding()
     }
     
     //MARK: - Constants
