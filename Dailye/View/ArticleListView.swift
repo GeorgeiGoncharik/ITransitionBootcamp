@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ArticleListView: View {
-    @StateObject var viewModel: ArtitcleListViewModel
+    @StateObject var viewModel: ArticleListViewModel
     
     var body: some View {
         NavigationView{
@@ -19,6 +19,6 @@ struct ArticleListView: View {
 
 struct ArticleListView_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleListView(viewModel: ArtitcleListViewModel())
+        ArticleListView(viewModel: ArticleListViewModel())
     }
 }

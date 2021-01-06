@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-class ArtitcleListViewModel: ObservableObject{
+class ArticleListViewModel: ObservableObject{
     @Published var response: ArticleListResponse?
     @Published var articles: [Article] = []
     @Published var state = State.ready

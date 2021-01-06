@@ -2,7 +2,7 @@ import SwiftUI
 
 struct StatusOverlayView: View {
 
-    @ObservedObject var viewModel: ArtitcleListViewModel
+    @ObservedObject var viewModel: ArticleListViewModel
 
     var body: some View {
         switch viewModel.state {
@@ -31,6 +31,6 @@ struct StatusOverlayView: View {
 
 struct StatusOverlayView_Previews: PreviewProvider {
     static var previews: some View {
-        StatusOverlayView(viewModel: ArtitcleListViewModel())
+        StatusOverlayView(viewModel: ArticleListViewModel())
     }
 }
