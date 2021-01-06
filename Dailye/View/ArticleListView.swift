@@ -1,13 +1,19 @@
 import SwiftUI
 
 struct ArticleListView: View {
-    @ObservedObject var viewModel: ArtitcleListViewModel
+    @StateObject var viewModel: ArtitcleListViewModel
+    
     var body: some View {
-        List(viewModel.articles){ article in
-            ArticleView(article: article)
+        NavigationView{
+            List(viewModel.articles){ article in
+                NavigationLink(destination: ArticleDetailView(article: article)){
+                    ArticleView(article: article)
+                }
+            }
+                .navigationTitle("Articles")
+                .overlay(StatusOverlayView(viewModel: viewModel))
+                .onAppear { self.viewModel.loadIfNeeded() }
         }
-            .overlay(StatusOverlayView(viewModel: viewModel))
-            .onAppear { self.viewModel.loadIfNeeded() }
     }
 }
 
