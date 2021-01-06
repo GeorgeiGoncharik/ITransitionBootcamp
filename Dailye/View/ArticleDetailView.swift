@@ -1,9 +1,51 @@
 import SwiftUI
+import URLImage
 
 struct ArticleDetailView: View {
     var article: Article
     var body: some View {
-        EmptyView()
+        ScrollView{
+            if let urlToImage = article.urlToImage, let url = URL(string: urlToImage){
+                URLImage(url: url,
+                         empty: { EmptyView() },
+                         inProgress: { _ in EmptyView() },
+                         failure: { _, _ in Text("Downloading has failed!")
+                         },
+                         content: { image, _ in
+                             image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .ignoresSafeArea(edges: .top)
+                          })
+                }
+            VStack(alignment: .leading) {
+                if let title = article.title{
+                    Text(title)
+                        .font(.title)
+                        .foregroundColor(.primary)
+                }
+                HStack {
+                    if let author = article.author{
+                        Text(author)
+                    }
+                    Spacer()
+                    Text(article.source.name)
+                }
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+
+                Divider()
+                    
+                if let desc = article.articleDescription{
+                    Text(desc)
+                }
+                
+                Button("Read more →") {
+                    
+                }
+            }
+                .padding()
+        }
     }
 }
 
