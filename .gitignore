@@ -42,4 +42,4 @@ iOSInjectionProject/
 
 
 #file with API key
-Keys.plist
+**/Keys.plist
