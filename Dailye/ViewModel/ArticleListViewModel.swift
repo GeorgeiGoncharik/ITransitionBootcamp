@@ -13,7 +13,7 @@ class ArticleListViewModel: ObservableObject{
         case error(Error)
     }
     
-    var url = URL.with(string: "top-headlines?country=us")! //bogus
+    var url = URL.with(request: EverythingRequest(q:"Playstation5",language: Languages.russian))! //bogus
     var urlSession = URLSession.shared
     var dataTask: AnyPublisher<ArticleListResponse, Error>{
         self.urlSession

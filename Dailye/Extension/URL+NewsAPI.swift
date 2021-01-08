@@ -15,7 +15,7 @@ extension URL {
         return "bogus"
     }
     
-    static func with(string: String) -> URL? {
-        return URL(string: "\(baseUrl)\(string)&\(apiKey)")
+    static func with(request: Requestable) -> URL? {
+        return URL(string: "\(baseUrl)\(request.endpoint)?\(request.makeQueryParams())&\(apiKey)")
     }
 }
