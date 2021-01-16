@@ -29,6 +29,14 @@
 		0415DB5A259FEEBB00E850B7 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415DB59259FEEBB00E850B7 /* ArticleView.swift */; };
 		0415DB5D25A083EC00E850B7 /* StatusOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415DB5C25A083EC00E850B7 /* StatusOverlayView.swift */; };
 		0415DB6525A099E100E850B7 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0415DB6425A099E100E850B7 /* URLImage */; };
+		0419BD5125AE2EA100942084 /* TitleWithSF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0419BD5025AE2EA100942084 /* TitleWithSF.swift */; };
+		0419BD5425AEF14500942084 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0419BD5325AEF14500942084 /* WebView.swift */; };
+		0419BD5725AEFD3900942084 /* CategoryTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0419BD5625AEFD3900942084 /* CategoryTagView.swift */; };
+		0419BD6225B079AA00942084 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0419BD6125B079AA00942084 /* Color+Theme.swift */; };
+		0419BD6625B07A6F00942084 /* CardLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0419BD6525B07A6F00942084 /* CardLook.swift */; };
+		0419BD6925B07AF800942084 /* CardAccent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0419BD6825B07AF800942084 /* CardAccent.swift */; };
+		0419BD6C25B07B3F00942084 /* CardText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0419BD6B25B07B3F00942084 /* CardText.swift */; };
+		0419BD6F25B07BD900942084 /* View+ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0419BD6E25B07BD900942084 /* View+ViewModifier.swift */; };
 		04CCF573259AA28B0019654A /* DailyeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCF572259AA28B0019654A /* DailyeApp.swift */; };
 		04CCF575259AA28B0019654A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCF574259AA28B0019654A /* ContentView.swift */; };
 		04CCF577259AA28F0019654A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CCF576259AA28F0019654A /* Assets.xcassets */; };
@@ -59,6 +67,14 @@
 		0415DB55259FE49E00E850B7 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		0415DB59259FEEBB00E850B7 /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 		0415DB5C25A083EC00E850B7 /* StatusOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusOverlayView.swift; sourceTree = "<group>"; };
+		0419BD5025AE2EA100942084 /* TitleWithSF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleWithSF.swift; sourceTree = "<group>"; };
+		0419BD5325AEF14500942084 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		0419BD5625AEFD3900942084 /* CategoryTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTagView.swift; sourceTree = "<group>"; };
+		0419BD6125B079AA00942084 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
+		0419BD6525B07A6F00942084 /* CardLook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLook.swift; sourceTree = "<group>"; };
+		0419BD6825B07AF800942084 /* CardAccent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAccent.swift; sourceTree = "<group>"; };
+		0419BD6B25B07B3F00942084 /* CardText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardText.swift; sourceTree = "<group>"; };
+		0419BD6E25B07BD900942084 /* View+ViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ViewModifier.swift"; sourceTree = "<group>"; };
 		04CCF56F259AA28B0019654A /* Dailye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dailye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04CCF572259AA28B0019654A /* DailyeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyeApp.swift; sourceTree = "<group>"; };
 		04CCF574259AA28B0019654A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,11 +133,15 @@
 		0415DB3D259FC4F600E850B7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0419BD6425B07A2000942084 /* ViewModifier */,
 				0415DB3E259FC56100E850B7 /* ArticleListView.swift */,
 				0415DB59259FEEBB00E850B7 /* ArticleView.swift */,
 				0415DB5C25A083EC00E850B7 /* StatusOverlayView.swift */,
 				0401F3FE25A3B7C500147FC9 /* ArticleDetailView.swift */,
 				0401F40125A67C7A00147FC9 /* HomeView.swift */,
+				0419BD5025AE2EA100942084 /* TitleWithSF.swift */,
+				0419BD5325AEF14500942084 /* WebView.swift */,
+				0419BD5625AEFD3900942084 /* CategoryTagView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -140,8 +160,20 @@
 				0415DB46259FC7B000E850B7 /* URLSession+ArticleListResponse.swift */,
 				0415DB51259FC94700E850B7 /* URL+NewsAPI.swift */,
 				0401F3FB25A1C9F400147FC9 /* Date+DiffBetweenTwoDates.swift */,
+				0419BD6125B079AA00942084 /* Color+Theme.swift */,
+				0419BD6E25B07BD900942084 /* View+ViewModifier.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		0419BD6425B07A2000942084 /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				0419BD6525B07A6F00942084 /* CardLook.swift */,
+				0419BD6825B07AF800942084 /* CardAccent.swift */,
+				0419BD6B25B07B3F00942084 /* CardText.swift */,
+			);
+			path = ViewModifier;
 			sourceTree = "<group>";
 		};
 		04CCF566259AA28B0019654A = {
@@ -266,26 +298,34 @@
 			files = (
 				0401F41625A7C1CC00147FC9 /* Countries.swift in Sources */,
 				0415DB35259F551300E850B7 /* ArticleListResponse.swift in Sources */,
+				0419BD6F25B07BD900942084 /* View+ViewModifier.swift in Sources */,
 				04CCF57C259AA28F0019654A /* Persistence.swift in Sources */,
 				0401F41B25A7D7F700147FC9 /* EverythingRequest.swift in Sources */,
 				0415DB38259F55FA00E850B7 /* Article.swift in Sources */,
+				0419BD6925B07AF800942084 /* CardAccent.swift in Sources */,
 				0415DB3F259FC56100E850B7 /* ArticleListView.swift in Sources */,
 				0401F40B25A7B69B00147FC9 /* SortBys.swift in Sources */,
 				0401F40F25A7B83000147FC9 /* TopHeadlinesRequest.swift in Sources */,
 				0401F3FF25A3B7C500147FC9 /* ArticleDetailView.swift in Sources */,
+				0419BD6225B079AA00942084 /* Color+Theme.swift in Sources */,
 				0401F41E25A7DA7400147FC9 /* Requestable.swift in Sources */,
 				0401F40725A7B2DC00147FC9 /* Categories.swift in Sources */,
 				0401F40225A67C7A00147FC9 /* HomeView.swift in Sources */,
 				0415DB52259FC94700E850B7 /* URL+NewsAPI.swift in Sources */,
 				0415DB43259FC5A200E850B7 /* ArticleListViewModel.swift in Sources */,
 				0415DB3B259F563600E850B7 /* Source.swift in Sources */,
+				0419BD5425AEF14500942084 /* WebView.swift in Sources */,
+				0419BD5725AEFD3900942084 /* CategoryTagView.swift in Sources */,
 				0415DB47259FC7B000E850B7 /* URLSession+ArticleListResponse.swift in Sources */,
 				0401F3FC25A1C9F400147FC9 /* Date+DiffBetweenTwoDates.swift in Sources */,
 				04CCF575259AA28B0019654A /* ContentView.swift in Sources */,
+				0419BD6625B07A6F00942084 /* CardLook.swift in Sources */,
 				04CCF573259AA28B0019654A /* DailyeApp.swift in Sources */,
 				04CCF57F259AA28F0019654A /* Dailye.xcdatamodeld in Sources */,
 				0401F41325A7B90E00147FC9 /* Languages.swift in Sources */,
 				0415DB5A259FEEBB00E850B7 /* ArticleView.swift in Sources */,
+				0419BD5125AE2EA100942084 /* TitleWithSF.swift in Sources */,
+				0419BD6C25B07B3F00942084 /* CardText.swift in Sources */,
 				0415DB4E259FC85E00E850B7 /* JSONSchemaSupport.swift in Sources */,
 				0415DB5D25A083EC00E850B7 /* StatusOverlayView.swift in Sources */,
 			);
