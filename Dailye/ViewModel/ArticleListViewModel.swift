@@ -2,25 +2,29 @@ import Foundation
 import Combine
 
 class ArticleListViewModel: ObservableObject{
-    @Published var response: ArticleListResponse?
-    @Published var articles: [Article] = []
-    @Published var state = State.ready
+    @Published private(set) var articles: [Article] = []
+    @Published private(set) var state = State.ready
+    private var request: Requestable
+    
+    init(request: Requestable) {
+        self.request = request
+    }
 
     enum State {
         case ready
         case loading(Cancellable)
         case loaded
+        case done
         case error(Error)
     }
     
-    var url = URL.with(request: EverythingRequest(q:"Playstation5",language: Languages.russian))! //bogus
-    var urlSession = URLSession.shared
-    var dataTask: AnyPublisher<ArticleListResponse, Error>{
+    private var urlSession = URLSession.shared
+    private var dataTask: AnyPublisher<ArticleListResponse, Error>{
         self.urlSession
-            .dataTaskPublisher(for: self.url)
+            .dataTaskPublisher(for: URL.with(request: request)!)
             .tryMap { element -> Data in
                 guard let httpResponse = element.response as? HTTPURLResponse,
-                    httpResponse.statusCode == 200 else {
+                      200..<300 ~= httpResponse.statusCode else {
                         throw URLError(.badServerResponse)
                     }
                 return element.data
@@ -41,10 +45,13 @@ class ArticleListViewModel: ObservableObject{
                      self.state = .error(error)
                  }
              },
-             receiveValue: { value in
-                 self.state = .loaded
-                 self.response = value
-                 self.articles = value.articles ?? []
+             receiveValue: { response in
+                if let arts = response.articles, arts.count > 0{
+                    self.state = .loaded
+                    self.articles += arts
+                } else {
+                    self.state = .done
+                }
              }
          ))
     }
@@ -52,6 +59,12 @@ class ArticleListViewModel: ObservableObject{
     func loadIfNeeded() {
         assert(Thread.isMainThread)
         guard case .ready = self.state else { return }
+        self.load()
+    }
+    
+    func loadNextPage() {
+        assert(Thread.isMainThread)
+        request.nextPage()
         self.load()
     }
 }
