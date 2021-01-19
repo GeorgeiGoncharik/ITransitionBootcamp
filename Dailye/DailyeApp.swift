@@ -8,7 +8,9 @@ struct DailyeApp: App {
         WindowGroup {
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            ArticleListView(viewModel: ArticleListViewModel())
+//            ArticleListView(viewModel: ArticleListViewModel())
+//           HomeView()
+            AppView()
         }
     }
 }

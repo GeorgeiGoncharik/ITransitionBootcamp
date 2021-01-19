@@ -1,7 +1,7 @@
 import SwiftUI
 import URLImage
 
-struct ArticleDetailView: View {
+struct ArticleDetail: View {
     var article: Article
     var body: some View {
         ScrollView{
@@ -15,43 +15,49 @@ struct ArticleDetailView: View {
                              image
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .ignoresSafeArea(edges: .top)
+                                .cornerRadius(25)
                           })
                 }
             VStack(alignment: .leading) {
                 if let title = article.title{
                     Text(title)
-                        .font(.title)
-                        .foregroundColor(.primary)
+                        .font(.title2)
+                        .bold()
+                        .cardText()
                 }
                 HStack {
+                    Text(article.source.name)
+                        .cardText()
+                    Spacer()
                     if let author = article.author{
                         Text(author)
+                            .cardText()
                     }
-                    Spacer()
-                    Text(article.source.name)
                 }
                 .font(.subheadline)
-                .foregroundColor(.secondary)
 
                 Divider()
                     
                 if let desc = article.articleDescription{
                     Text(desc)
+                        .cardText()
                 }
                 
-                Button("Read more →") {
-                    
+                Spacer()
+                
+                NavigationLink(destination: WebView(url: article.url!)){
+                        Text("Read more →")
                 }
             }
-                .padding()
         }
+        .padding()
+        .navigationBarTitle("Read about it.")
     }
 }
 
 struct ArticleDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleDetailView(article: Article(source: Source(id: "cnn", name: "CNN"),
+        ArticleDetail(article: Article(source: Source(id: "cnn", name: "CNN"),
                                            author: "Clare Foran, Ted Barrett and Ali Zaslav, CNN",
                                            title: "Senate votes to override Trump's veto on defense bill - CNN",
                                            articleDescription: "The Senate voted on Friday to override President Donald Trump's veto of the sweeping defense bill known as the National Defense Authorization Act, delivering a bipartisan rebuke to the President in his final days in office.",

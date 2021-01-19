@@ -9,7 +9,7 @@ struct StatusOverlayView: View {
         case .ready:
             return AnyView(EmptyView())
         case .loading:
-            return AnyView(ProgressView())
+            return AnyView(EmptyView())
         case .loaded:
             return AnyView(EmptyView())
         case let .error(error):
@@ -24,13 +24,9 @@ struct StatusOverlayView: View {
                 .padding()
                 .background(Color.yellow)
             )
+        case .done:
+            return AnyView(EmptyView())
         }
     }
 
-}
-
-struct StatusOverlayView_Previews: PreviewProvider {
-    static var previews: some View {
-        StatusOverlayView(viewModel: ArticleListViewModel())
-    }
 }
