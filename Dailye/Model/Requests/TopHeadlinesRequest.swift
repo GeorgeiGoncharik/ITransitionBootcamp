@@ -3,6 +3,7 @@ import Foundation
 struct TopHeadlinesRequest: Requestable {
     
     let endpoint = "top-headlines"
+    var page: Int = 1
     
     var q: String?
     var sources: [String] = []
@@ -38,7 +39,15 @@ struct TopHeadlinesRequest: Requestable {
             query.append("pageSize=\(pgSize)")
         }
         
+        if page > 1 {
+            query.append("page=\(page)")
+        }
+        
         let queryParams = query.joined(separator: "&")
         return queryParams
+    }
+    
+    mutating func nextPage() {
+        page += 1
     }
 }
