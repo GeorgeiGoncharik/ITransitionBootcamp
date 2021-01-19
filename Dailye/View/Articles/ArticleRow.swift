@@ -31,17 +31,8 @@ struct ArticleRow: View {
                             .cardText()
                     }
                     HStack{
-                        if let published = article.publishedAt, let passed = Date() - published{
-                            if let hours = passed.hour, hours < 48 {
-                                Text("\(article.source.name)・\(hours) hours ago")
-                                    .cardText()
-                            } else {
-                                if let days = passed.day{
-                                    Text("\(article.source.name)・\(days) days ago")
-                                        .cardText()
-                                }
-                            }
-                        }
+                        Text(article.publishedAtText)
+                            .font(.footnote)
                         
                         Spacer()
                         
@@ -60,8 +51,6 @@ struct ArticleRow: View {
                         .padding(.horizontal)
                         .font(.headline)
                     }
-                    .lineLimit(footLineLimit)
-                    .font(.footnote)
                     .padding(.bottom)
                 }
                 .padding(.horizontal)

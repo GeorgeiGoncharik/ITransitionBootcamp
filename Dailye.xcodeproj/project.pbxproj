@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0401F3FC25A1C9F400147FC9 /* Date+DiffBetweenTwoDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401F3FB25A1C9F400147FC9 /* Date+DiffBetweenTwoDates.swift */; };
 		0401F3FF25A3B7C500147FC9 /* ArticleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401F3FE25A3B7C500147FC9 /* ArticleDetail.swift */; };
 		0401F40225A67C7A00147FC9 /* TopHeadlinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401F40125A67C7A00147FC9 /* TopHeadlinesView.swift */; };
 		0401F40725A7B2DC00147FC9 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401F40625A7B2DC00147FC9 /* Categories.swift */; };
@@ -50,7 +49,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0401F3FB25A1C9F400147FC9 /* Date+DiffBetweenTwoDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DiffBetweenTwoDates.swift"; sourceTree = "<group>"; };
 		0401F3FE25A3B7C500147FC9 /* ArticleDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetail.swift; sourceTree = "<group>"; };
 		0401F40125A67C7A00147FC9 /* TopHeadlinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeadlinesView.swift; sourceTree = "<group>"; };
 		0401F40625A7B2DC00147FC9 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 			children = (
 				0415DB46259FC7B000E850B7 /* URLSession+ArticleListResponse.swift */,
 				0415DB51259FC94700E850B7 /* URL+NewsAPI.swift */,
-				0401F3FB25A1C9F400147FC9 /* Date+DiffBetweenTwoDates.swift */,
 				0419BD6125B079AA00942084 /* Color+Theme.swift */,
 				0419BD6E25B07BD900942084 /* View+ViewModifier.swift */,
 			);
@@ -356,7 +353,6 @@
 				0419BD7B25B3902800942084 /* SettingsView.swift in Sources */,
 				0419BD5725AEFD3900942084 /* CategoryTagView.swift in Sources */,
 				0415DB47259FC7B000E850B7 /* URLSession+ArticleListResponse.swift in Sources */,
-				0401F3FC25A1C9F400147FC9 /* Date+DiffBetweenTwoDates.swift in Sources */,
 				04CCF575259AA28B0019654A /* ContentView.swift in Sources */,
 				0419BD6625B07A6F00942084 /* CardLook.swift in Sources */,
 				04CCF573259AA28B0019654A /* DailyeApp.swift in Sources */,
