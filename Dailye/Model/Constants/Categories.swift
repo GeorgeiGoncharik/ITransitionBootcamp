@@ -4,7 +4,7 @@ import Foundation
  Possible options: business entertainment general health science sports technology .
  Note: you can't mix this param with the sources param.
  */
-enum Categories: String {
+enum Categories: String, CaseIterable {
     case business = "business"
     case entertainment = "entertainment"
     case general = "general"

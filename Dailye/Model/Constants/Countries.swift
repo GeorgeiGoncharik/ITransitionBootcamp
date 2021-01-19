@@ -5,7 +5,7 @@ import Foundation
  lt lv ma mx my ng nl no nz ph pl pt ro rs ru sa se sg si sk th tr tw ua us ve za .
  Note: you can't mix this param with the sources param.
  */
-enum Countries: String {
+enum Countries: String, CaseIterable {
     case argentina = "ar"
     case australia = "au"
     case austria = "at"

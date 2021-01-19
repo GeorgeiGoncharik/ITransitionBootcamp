@@ -6,7 +6,7 @@ import Foundation
  -publishedAt = newest articles come first.
  Default: publishedAt
  */
-enum SortBys: String {
+enum SortBys: String, CaseIterable {
     case relevancy = "relevancy"
     case popularity = "popularity"
     case publishedAt = "publishedAt"
