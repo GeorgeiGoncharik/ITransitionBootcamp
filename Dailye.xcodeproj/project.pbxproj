@@ -46,6 +46,7 @@
 		04CCF57A259AA28F0019654A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CCF579259AA28F0019654A /* Preview Assets.xcassets */; };
 		04CCF57C259AA28F0019654A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCF57B259AA28F0019654A /* Persistence.swift */; };
 		04CCF57F259AA28F0019654A /* Dailye.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04CCF57D259AA28F0019654A /* Dailye.xcdatamodeld */; };
+		04E148AF25B8841A0051D837 /* CardTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E148AE25B8841A0051D837 /* CardTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		04CCF57B259AA28F0019654A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		04CCF57E259AA28F0019654A /* Dailye.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dailye.xcdatamodel; sourceTree = "<group>"; };
 		04CCF580259AA28F0019654A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04E148AE25B8841A0051D837 /* CardTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				0419BD5025AE2EA100942084 /* TitleWithSF.swift */,
 				0419BD5325AEF14500942084 /* WebView.swift */,
 				0419BD5625AEFD3900942084 /* CategoryTagView.swift */,
+				04E148AE25B8841A0051D837 /* CardTextField.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				0415DB5A259FEEBB00E850B7 /* ArticleRow.swift in Sources */,
 				0419BD5125AE2EA100942084 /* TitleWithSF.swift in Sources */,
 				0419BD6C25B07B3F00942084 /* CardText.swift in Sources */,
+				04E148AF25B8841A0051D837 /* CardTextField.swift in Sources */,
 				0415DB4E259FC85E00E850B7 /* JSONSchemaSupport.swift in Sources */,
 				0415DB5D25A083EC00E850B7 /* StatusOverlayView.swift in Sources */,
 			);
