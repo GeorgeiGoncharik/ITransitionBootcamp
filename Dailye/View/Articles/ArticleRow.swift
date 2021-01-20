@@ -31,7 +31,7 @@ struct ArticleRow: View {
                             .cardText()
                     }
                     HStack{
-                        Text(article.publishedAtText)
+                        Text("\(article.source.name)・\(article.publishedAtText)")
                             .font(.footnote)
                         
                         Spacer()

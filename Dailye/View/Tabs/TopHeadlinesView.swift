@@ -8,13 +8,15 @@ struct TopHeadlinesView: View {
                     ScrollView (.horizontal, showsIndicators: false) {
                         HStack {
                             ForEach(Categories.allCases.indices) {index in
-                                NavigationLink(destination: ArticleList(request: TopHeadlinesRequest(category: Categories.allCases[index]))){
+                                NavigationLink(destination: ArticleList(
+                                                request: TopHeadlinesRequest(category: Categories.allCases[index]),
+                                                title: Categories.allCases[index].rawValue)){
                                     CategoryTagView(category: Categories.allCases[index])
                                 }
                             }
                         }.padding()
                     }
-                    ArticleList()
+                    ArticleList(request: TopHeadlinesRequest(country: Countries.unitedStates))
                 }
             }
             .navigationBarTitle("Top headlines.")

@@ -23,11 +23,22 @@ struct ArticleDetail: View {
                     Text(title)
                         .font(.title2)
                         .bold()
+                        .padding(.bottom)
                         .cardText()
                 }
                 HStack {
-                    Text(article.source.name)
-                        .cardText()
+                    NavigationLink(
+                        destination: ArticleList(
+                            request: TopHeadlinesRequest(
+                                sources:
+                                    [
+                                        article.source.id ??
+                                        article.source.name.lowercased().replacingOccurrences(of: " ", with: "-")
+                                    ]),
+                            title: article.source.name)){
+                        Text(article.source.name)
+                            .cardText()
+                        }
                     Spacer()
                     if let author = article.author{
                         Text(author)

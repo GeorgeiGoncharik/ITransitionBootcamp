@@ -1,14 +1,26 @@
 import SwiftUI
 
 struct ArticleList: View {
+    var title: String
     @StateObject var viewModel: ArticleListViewModel
     
-    init(request: Requestable = TopHeadlinesRequest(country: Countries.unitedStates)) { // bogus
+    init(request: Requestable, title: String = "") {
         _viewModel = StateObject(wrappedValue: ArticleListViewModel(request: request))
+        self.title = title
     }
     
     var body: some View {
-        ScrollView{
+        if(!title.isEmpty){
+            content()
+                .navigationTitle(title.capitalized)
+                .navigationBarTitleDisplayMode(.large)
+        } else {
+            content()
+        }
+    }
+    
+    func content() -> some View{
+        return ScrollView{
             LazyVStack {
                 
                 ForEach(viewModel.articles){ article in
