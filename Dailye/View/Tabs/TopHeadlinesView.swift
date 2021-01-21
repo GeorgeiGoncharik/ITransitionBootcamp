@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct TopHeadlinesView: View {
+    @StateObject private var viewModel = TopHeadlinesViewModel()
+    
     var body: some View {
         NavigationView{
             ScrollView{
@@ -16,7 +18,7 @@ struct TopHeadlinesView: View {
                             }
                         }.padding()
                     }
-                    ArticleList(request: TopHeadlinesRequest(country: Countries.unitedStates))
+                    ArticleList(request: TopHeadlinesRequest(country: viewModel.country))
                 }
             }
             .navigationBarTitle("Top headlines.")
