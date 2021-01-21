@@ -15,7 +15,7 @@ struct ArticleDetail: View {
                              image
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .cornerRadius(25)
+                                .cornerRadius(10)
                           })
                 }
             VStack(alignment: .leading) {
@@ -62,7 +62,8 @@ struct ArticleDetail: View {
             }
         }
         .padding()
-        .navigationBarTitle("Read about it.")
+        .navigationBarTitle(article.title ?? "")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
