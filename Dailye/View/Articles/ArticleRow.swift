@@ -17,13 +17,16 @@ struct ArticleRow: View {
                                     .aspectRatio(contentMode: .fit)
                                     .cornerRadius(cornerRadius)
                              })
+                    
+                    if let title = article.title{
+                        Title(title, with: .horizontal)
+                    }
+                } else {
+                    if let title = article.title{
+                        Title(title, with: [.horizontal, .top])
+                    }
                 }
                 Group{
-                    if let title = article.title{
-                        Text(title)
-                            .font(.title3)
-                            .cardText()
-                    }
                     if let desc = article.articleDescription{
                         Text(desc)
                             .lineLimit(descriptionLineLimit)
@@ -33,6 +36,7 @@ struct ArticleRow: View {
                     HStack{
                         Text("\(article.source.name)・\(article.publishedAtText)")
                             .font(.footnote)
+                            .lineLimit(footLineLimit)
                         
                         Spacer()
                         
@@ -56,6 +60,13 @@ struct ArticleRow: View {
                 .padding(.horizontal)
         }
             .cardLook()
+    }
+    
+    func Title(_ title: String, with edges: Edge.Set) -> some View{
+        Text(title)
+            .padding(edges)
+            .font(.title3)
+            .cardText()
     }
     
     //MARK: - Constants
