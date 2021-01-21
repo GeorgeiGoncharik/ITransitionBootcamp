@@ -11,7 +11,9 @@ struct TopHeadlinesView: View {
                         HStack {
                             ForEach(Categories.allCases.indices) {index in
                                 NavigationLink(destination: ArticleList(
-                                                request: TopHeadlinesRequest(category: Categories.allCases[index]),
+                                                request: TopHeadlinesRequest(
+                                                    category: Categories.allCases[index],
+                                                    country: viewModel.country),
                                                 title: Categories.allCases[index].rawValue)){
                                     CategoryTagView(category: Categories.allCases[index])
                                 }

@@ -10,7 +10,9 @@ struct SearchView: View {
                     textField: TextField("", text: $search),
                     imageName: "magnifyingglass"
                 )
+                .padding()
                 
+                ArticleList(request: EverythingRequest(q:search))
             }
             .navigationTitle("Search")
         }
