@@ -39,6 +39,7 @@
 		0419BD7525B38F3D00942084 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0419BD7425B38F3D00942084 /* SearchView.swift */; };
 		0419BD7825B38FBB00942084 /* BookmarkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0419BD7725B38FBB00942084 /* BookmarkListView.swift */; };
 		0419BD7B25B3902800942084 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0419BD7A25B3902800942084 /* SettingsView.swift */; };
+		046EEF4025BA66B60013884B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046EEF3F25BA66B60013884B /* SearchViewModel.swift */; };
 		04BEC2B525B8F7E900EA0A1D /* TopHeadlinesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEC2B425B8F7E900EA0A1D /* TopHeadlinesViewModel.swift */; };
 		04BEC2B825BA4C2F00EA0A1D /* ArticleFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEC2B725BA4C2F00EA0A1D /* ArticleFetcher.swift */; };
 		04BEC2BB25BA4CE100EA0A1D /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEC2BA25BA4CE100EA0A1D /* Parsing.swift */; };
@@ -84,6 +85,7 @@
 		0419BD7425B38F3D00942084 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		0419BD7725B38FBB00942084 /* BookmarkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListView.swift; sourceTree = "<group>"; };
 		0419BD7A25B3902800942084 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		046EEF3F25BA66B60013884B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		04BEC2B425B8F7E900EA0A1D /* TopHeadlinesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeadlinesViewModel.swift; sourceTree = "<group>"; };
 		04BEC2B725BA4C2F00EA0A1D /* ArticleFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleFetcher.swift; sourceTree = "<group>"; };
 		04BEC2BA25BA4CE100EA0A1D /* Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			children = (
 				0415DB42259FC5A200E850B7 /* ArticleListViewModel.swift */,
 				04BEC2B425B8F7E900EA0A1D /* TopHeadlinesViewModel.swift */,
+				046EEF3F25BA66B60013884B /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				0419BD7B25B3902800942084 /* SettingsView.swift in Sources */,
 				0419BD5725AEFD3900942084 /* CategoryTagView.swift in Sources */,
 				04CCF575259AA28B0019654A /* ContentView.swift in Sources */,
+				046EEF4025BA66B60013884B /* SearchViewModel.swift in Sources */,
 				04BEC2BE25BA526D00EA0A1D /* ArticleError.swift in Sources */,
 				0419BD6625B07A6F00942084 /* CardLook.swift in Sources */,
 				04CCF573259AA28B0019654A /* DailyeApp.swift in Sources */,

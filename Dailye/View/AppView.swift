@@ -8,7 +8,7 @@ struct AppView: View {
                     Image(systemName: "flame")
                     Text("Top headlines")
                 }
-            SearchView()
+            SearchView(viewModel: SearchViewModel())
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
