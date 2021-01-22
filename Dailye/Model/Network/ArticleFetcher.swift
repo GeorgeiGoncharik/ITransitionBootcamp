@@ -7,7 +7,15 @@ protocol ArticleFetchable{
     ) -> AnyPublisher<ArticleListResponse, Error>
 }
 
-extension ArticleFetchable{
+class ArticleFetcher{
+    private let session: URLSession
+    
+    init(session: URLSession = .shared) {
+      self.session = session
+    }
+}
+
+extension ArticleFetcher: ArticleFetchable {
     func getArticleListResponse(
         with request: Requestable
     ) -> AnyPublisher<ArticleListResponse, Error>{
@@ -22,7 +30,7 @@ extension ArticleFetchable{
             return Fail(error: error).eraseToAnyPublisher()
         }
         
-        return URLSession.shared.dataTaskPublisher(for: url)
+        return session.dataTaskPublisher(for: url)
             .mapError{ error in
                 ArticleError.network(description: error.localizedDescription)
             }

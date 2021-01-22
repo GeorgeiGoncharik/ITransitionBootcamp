@@ -5,8 +5,10 @@ class ArticleListViewModel: ObservableObject{
     @Published private(set) var articles: [Article] = []
     @Published private(set) var state = State.ready
     private var request: Requestable
+    private let articleFetcher: ArticleFetchable
     
     init(request: Requestable) {
+        self.articleFetcher = ArticleFetcher()
         self.request = request
     }
 
@@ -17,43 +19,30 @@ class ArticleListViewModel: ObservableObject{
         case done
         case error(Error)
     }
-    
-    private var urlSession = URLSession.shared
-    private var dataTask: AnyPublisher<ArticleListResponse, Error>{
-        self.urlSession
-            .dataTaskPublisher(for: URL.with(request: request)!)
-            .tryMap { element -> Data in
-                guard let httpResponse = element.response as? HTTPURLResponse,
-                      200..<300 ~= httpResponse.statusCode else {
-                        throw URLError(.badServerResponse)
-                    }
-                return element.data
-                }
-            .decode(type: ArticleListResponse.self, decoder: iso8601JSONDecoder())
-            .receive(on: RunLoop.main)
-            .eraseToAnyPublisher()
-    }
-    
+        
     func load(){
         assert(Thread.isMainThread)
-        self.state = .loading(self.dataTask.sink(
-             receiveCompletion: { completion in
-                 switch completion {
-                 case .finished:
-                     break
-                 case let .failure(error):
-                     self.state = .error(error)
-                 }
-             },
-             receiveValue: { response in
-                if let arts = response.articles, arts.count > 0{
-                    self.state = .loaded
-                    self.articles += arts
-                } else {
-                    self.state = .done
-                }
-             }
-         ))
+        self.state = .loading(
+            articleFetcher.getArticleListResponse(with: request)
+                .map{ response in response.articles ?? [] }
+                .receive(on: DispatchQueue.main)
+                .sink(
+                    receiveCompletion: { [weak self] completion in
+                        guard let self = self else { return }
+                        switch completion {
+                        case .finished:
+                            break
+                        case let .failure(error):
+                            self.state = .error(error)
+                        }
+                    },
+                    receiveValue: { [weak self] articles in
+                        guard let self = self else {return}
+                        self.state = articles.isEmpty ? .done : .loaded
+                        self.articles += articles
+                    }
+                )
+        )
     }
     
     func loadIfNeeded() {
@@ -62,7 +51,7 @@ class ArticleListViewModel: ObservableObject{
         self.load()
     }
     
-    func loadNextPage() {
+    func loadMore() {
         assert(Thread.isMainThread)
         request.nextPage()
         self.load()

@@ -34,7 +34,7 @@ struct ArticleList: View {
             switch viewModel.state {
             case .loaded:
                 Button("show more"){
-                    self.viewModel.loadNextPage()
+                    self.viewModel.loadMore()
                 }
                 .padding()
                 .cardLook()
