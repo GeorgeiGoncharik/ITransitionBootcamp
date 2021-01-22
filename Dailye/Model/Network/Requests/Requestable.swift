@@ -2,6 +2,6 @@ import Foundation
 
 protocol Requestable {
     var endpoint: String {get}
-    func makeQueryParams() -> String
+    var params: String {get}
     mutating func nextPage() -> Void
 }

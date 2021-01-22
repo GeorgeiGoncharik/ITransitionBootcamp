@@ -29,7 +29,7 @@ class ArticleListViewModel: ObservableObject{
                     }
                 return element.data
                 }
-            .decode(type: ArticleListResponse.self, decoder: newJSONDecoder())
+            .decode(type: ArticleListResponse.self, decoder: iso8601JSONDecoder())
             .receive(on: RunLoop.main)
             .eraseToAnyPublisher()
     }

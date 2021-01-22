@@ -12,7 +12,7 @@ struct TopHeadlinesRequest: Requestable {
     var country: Countries?
     var pageSize: Int?
     
-    func makeQueryParams() -> String {
+    var params: String {
         var query: [String] = []
         
         if let q = q{

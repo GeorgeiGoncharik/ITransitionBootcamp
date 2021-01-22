@@ -13,7 +13,7 @@ struct EverythingRequest: Requestable {
     var sortingStrategy: SortBys?
     var pageSize: Int?
     
-    func makeQueryParams() -> String {
+    var params: String {
         var query: [String] = []
         
         if let q = q{
@@ -29,13 +29,13 @@ struct EverythingRequest: Requestable {
         }
         
         if let from = from{
-            let encoder = newJSONEncoder()
+            let encoder = iso8601JSONEncoder()
             let data = try! encoder.encode(from)
             query.append("from=" + String(data: data, encoding: .utf8)!)
         }
         
         if let to = to{
-            let encoder = newJSONEncoder()
+            let encoder = iso8601JSONEncoder()
             let data = try! encoder.encode(to)
             query.append("to=" + String(data: data, encoding: .utf8)!)
         }

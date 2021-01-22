@@ -16,6 +16,9 @@ extension URL {
     }
     
     static func with(request: Requestable) -> URL? {
-        return URL(string: "\(baseUrl)\(request.endpoint)?\(request.makeQueryParams())&\(apiKey)")
+        if(request.params.isEmpty){
+            return URL(string: "\(baseUrl)\(request.endpoint)?\(apiKey)")
+        }
+        return URL(string: "\(baseUrl)\(request.endpoint)?\(request.params)&\(apiKey)")
     }
 }
