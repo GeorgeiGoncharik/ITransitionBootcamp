@@ -6,11 +6,8 @@ struct DailyeApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-//            ArticleListView(viewModel: ArticleListViewModel())
-//           HomeView()
             AppView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
