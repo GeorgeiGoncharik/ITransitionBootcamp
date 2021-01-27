@@ -7,23 +7,39 @@ struct TopHeadlinesView: View {
         NavigationView{
             ScrollView{
                 VStack{
-                    ScrollView (.horizontal, showsIndicators: false) {
-                        HStack {
-                            ForEach(Categories.allCases.indices) {index in
-                                NavigationLink(destination: ArticleList(
-                                                request: TopHeadlinesRequest(
-                                                    category: Categories.allCases[index],
-                                                    country: viewModel.country),
-                                                title: Categories.allCases[index].rawValue)){
-                                    CategoryTagView(category: Categories.allCases[index])
-                                }
-                            }
-                        }.padding()
-                    }
-                    ArticleList(request: TopHeadlinesRequest(country: viewModel.country))
+                    categoriesTabs
+                    ArticleList(
+                        request: TopHeadlinesRequest(
+                            language: viewModel.language,
+                            country: viewModel.country
+                        )
+                    )
                 }
             }
             .navigationBarTitle("Top headlines.")
+        }
+    }
+    
+    var categoriesTabs: some View{
+        ScrollView (.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(Categories.allCases.indices) {index in
+                    NavigationLink(
+                        destination: ArticleList(
+                            request: TopHeadlinesRequest(
+                                category: Categories.allCases[index],
+                                language: viewModel.language,
+                                country: viewModel.country
+                            ),
+                            title: Categories.allCases[index].rawValue
+                        )
+                    ){
+                        CategoryTagView(
+                            category: Categories.allCases[index]
+                        )
+                    }
+                }
+            }.padding()
         }
     }
 }
