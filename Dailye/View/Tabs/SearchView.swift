@@ -1,10 +1,12 @@
 import SwiftUI
+import CoreData
 
 struct SearchView: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @StateObject private var viewModel: SearchViewModel
     
-    init(viewModel: SearchViewModel) {
-        _viewModel = StateObject(wrappedValue: viewModel)
+    init() {
+        _viewModel = StateObject(wrappedValue: SearchViewModel())
     }
     
     var body: some View {
@@ -45,6 +47,6 @@ private extension SearchView{
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView(viewModel: SearchViewModel())
+        SearchView()
     }
 }

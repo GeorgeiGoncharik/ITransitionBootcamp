@@ -1,10 +1,3 @@
-//
-//  Persistence.swift
-//  Dailye
-//
-//  Created by Mac on 29.12.20.
-//
-
 import CoreData
 
 struct PersistenceController {

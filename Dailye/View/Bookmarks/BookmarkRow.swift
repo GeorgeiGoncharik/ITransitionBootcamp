@@ -1,16 +1,12 @@
 import SwiftUI
 import URLImage
 
-struct ArticleRow: View {
-    @StateObject private var viewModel: ArticleSharedViewModel
-    
-    init(article: Article) {
-        _viewModel = StateObject(wrappedValue: ArticleSharedViewModel(article: article))
-    }
+struct BookmarkRow: View {
+    var bookmark: Bookmark
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10){
-            if let urlToImage = viewModel.article.urlToImage, let url = URL(string: urlToImage){
+                if let urlToImage = bookmark.urlToImage, let url = URL(string: urlToImage){
                     URLImage(url: url,
                              empty: { EmptyView() },
                              inProgress: { _ in EmptyView() },
@@ -23,58 +19,37 @@ struct ArticleRow: View {
                                     .cornerRadius(cornerRadius)
                              })
                     
-                if let title = viewModel.article.title{
+                    if let title = bookmark.title{
                         Title(title, with: .horizontal)
                     }
+                    
                 } else {
-                    if let title = viewModel.article.title{
+                    
+                    if let title = bookmark.title{
                         Title(title, with: [.horizontal, .top])
                     }
                 }
                 Group{
-                    if let desc = viewModel.article.articleDescription{
+                    if let desc = bookmark.bookmarkDescription{
                         Text(desc)
                             .lineLimit(descriptionLineLimit)
                             .font(.subheadline)
                             .cardText()
                     }
                     HStack{
-                        Text("\(viewModel.article.source.name)・\(viewModel.article.publishedAt.withAgo)")
+                        Text("\(bookmark.sourceName ?? "")・\(bookmark.publishedAt.withAgo)")
                             .font(.footnote)
                             .lineLimit(footLineLimit)
-                        
                         Spacer()
-                        
-                        Group{
-                            Button(action: {
-                                withAnimation{
-                                    viewModel.isBookmarked
-                                        ? viewModel.deleteBookmark()
-                                        : viewModel.addBookmark()
-                                }
-                            }) {
-                                Image(systemName: viewModel.isBookmarked
-                                    ? "bookmark.fill"
-                                    : "bookmark")
-                            }
-                            .animation(.easeInOut)
-                            Button(action: {
-                                print("share button was tapped")
-                            }) {
-                                Image(systemName: "square.and.arrow.up")
-                            }
-                        }
-                        .padding(.horizontal)
-                        .font(.headline)
                     }
+                    .font(.headline)
                     .padding(.bottom)
                 }
                 .padding(.horizontal)
         }
-        .onAppear{viewModel.checkIfBookmark()}
-        .cardLook()
+            .cardLook()
     }
-        
+    
     func Title(_ title: String, with edges: Edge.Set) -> some View{
         Text(title)
             .padding(edges)
