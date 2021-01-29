@@ -3,6 +3,7 @@ import URLImage
 
 struct ArticleDetail: View {
     @StateObject private var viewModel: ArticleSharedViewModel
+    @State private var showShareSheet = false
     
     init(article: Article) {
         _viewModel = StateObject(wrappedValue: ArticleSharedViewModel(article: article))
@@ -10,10 +11,13 @@ struct ArticleDetail: View {
     
     var body: some View {
         WebView(url: viewModel.article.url!)
+            .sheet(isPresented: $showShareSheet, content: {
+                ShareSheet(activityItems: [URL(string: viewModel.article.url ?? "")])
+            })
             .onAppear{viewModel.checkIfBookmark()}
             .navigationBarTitle(viewModel.article.title ?? "")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(trailing:
+            .toolbar{
                 HStack{
                     Button(action: {
                         withAnimation{
@@ -25,15 +29,14 @@ struct ArticleDetail: View {
                         Image(systemName: viewModel.isBookmarked
                             ? "bookmark.fill"
                             : "bookmark")
-                            .imageScale(.large)
                     }
                     Button(action: {
-                        
+                        showShareSheet = true
                     }) {
                         Image(systemName: "square.and.arrow.up")
-                            .imageScale(.large)
+                            .padding(.leading)
                     }
                 }
-            )
+            }
     }
 }

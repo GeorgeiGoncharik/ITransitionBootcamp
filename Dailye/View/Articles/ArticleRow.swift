@@ -3,6 +3,7 @@ import URLImage
 
 struct ArticleRow: View {
     @StateObject private var viewModel: ArticleSharedViewModel
+    @State private var showShareSheet = false
     
     init(article: Article) {
         _viewModel = StateObject(wrappedValue: ArticleSharedViewModel(article: article))
@@ -59,7 +60,7 @@ struct ArticleRow: View {
                             }
                             .animation(.easeInOut)
                             Button(action: {
-                                print("share button was tapped")
+                                showShareSheet = true
                             }) {
                                 Image(systemName: "square.and.arrow.up")
                             }
@@ -71,6 +72,9 @@ struct ArticleRow: View {
                 }
                 .padding(.horizontal)
         }
+        .sheet(isPresented: $showShareSheet, content: {
+            ShareSheet(activityItems: [URL(string: viewModel.article.url ?? "")])
+        })
         .onAppear{viewModel.checkIfBookmark()}
         .cardLook()
     }
