@@ -5,8 +5,8 @@ struct BookmarkDetail: View {
     @Environment(\.presentationMode) var presentation
     @StateObject private var viewModel: BookmarkDetailViewModel
     
-    init(id: UUID) {
-        _viewModel = StateObject(wrappedValue: BookmarkDetailViewModel(for: id))
+    init(_ bookmark: Bookmark) {
+        _viewModel = StateObject(wrappedValue: BookmarkDetailViewModel(for: bookmark.url))
     }
     
     var body: some View {

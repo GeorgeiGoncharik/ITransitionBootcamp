@@ -23,7 +23,7 @@ struct ArticleList: View {
         return ScrollView{
             LazyVStack {
                 
-                ForEach(viewModel.articles){ article in
+                ForEach(viewModel.articles, id: \.self){ article in
                     NavigationLink(destination: ArticleDetail(article: article)){
                         ArticleRow(article: article)
                     }

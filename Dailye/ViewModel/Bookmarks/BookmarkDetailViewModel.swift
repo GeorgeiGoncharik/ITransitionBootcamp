@@ -3,18 +3,18 @@ import CoreData
 
 class BookmarkDetailViewModel: ObservableObject {
     @Published var bookmark: Bookmark = Bookmark()
-    private var bookmarkID: UUID
+    private var bookmarkURL: String
     private var context: NSManagedObjectContext
     
-    init(for id: UUID) {
+    init(for url: String?) {
         context = PersistenceController.shared.container.newBackgroundContext()
-        bookmarkID = id
+        bookmarkURL = url ?? "" 
         fetchBookmark()
     }
     
     func fetchBookmark(){
         let request = NSFetchRequest<Bookmark>(entityName: "Bookmark")
-        request.predicate = NSPredicate(format: "id == %@", bookmarkID.uuidString)
+        request.predicate = NSPredicate(format: "url == %@", bookmarkURL)
         request.fetchLimit = 1
         do{
             bookmark = try context.fetch(request).first!

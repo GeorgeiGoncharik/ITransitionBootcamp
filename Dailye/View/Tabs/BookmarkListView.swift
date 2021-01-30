@@ -17,7 +17,7 @@ struct BookmarkListView: View {
                     ScrollView{
                         LazyVStack {
                             ForEach(viewModel.bookmarks){ bookmark in
-                                NavigationLink(destination: BookmarkDetail(id: bookmark.id!)){
+                                NavigationLink(destination: BookmarkDetail(bookmark)){
                                     BookmarkRow(bookmark: bookmark)
                                 }
                             }
@@ -29,11 +29,5 @@ struct BookmarkListView: View {
             .onAppear{viewModel.fetchBookmarks()}
             .navigationTitle("Bookmarks")
         }
-    }
-}
-
-struct BookmarkListView_Previews: PreviewProvider {
-    static var previews: some View {
-        BookmarkListView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

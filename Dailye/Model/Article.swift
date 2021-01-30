@@ -1,7 +1,6 @@
 import Foundation
 
-struct Article: Codable, Identifiable {
-    let id = UUID()
+struct Article: Codable, Hashable {
     let source: Source
     let author, title, articleDescription: String?
     let url: String?

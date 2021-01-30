@@ -20,7 +20,7 @@ struct SearchView: View {
                 
                 ScrollView{
                     LazyVStack {
-                        ForEach(viewModel.articles){ article in
+                        ForEach(viewModel.articles, id: \.self){ article in
                             NavigationLink(destination: ArticleDetail(article: article)){
                                 ArticleRow(article: article)
                             }

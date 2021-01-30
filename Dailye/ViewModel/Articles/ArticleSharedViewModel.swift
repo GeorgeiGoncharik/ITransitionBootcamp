@@ -48,7 +48,7 @@ class ArticleSharedViewModel: ObservableObject {
     
     private func fetchBookmark() -> Bookmark?{
         let request = NSFetchRequest<Bookmark>(entityName: "Bookmark")
-        request.predicate = NSPredicate(format: "id == %@", article.id.uuidString)
+        request.predicate = NSPredicate(format: "url == %@", article.url ?? "")
         request.fetchLimit = 1
         do{
             return try context.fetch(request).first

@@ -14,7 +14,6 @@
     <entity name="Bookmark" representedClassName="Bookmark" syncable="YES" codeGenerationType="class">
         <attribute name="author" optional="YES" attributeType="String"/>
         <attribute name="bookmarkDescription" optional="YES" attributeType="String"/>
-        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="publishedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="sourceId" optional="YES" attributeType="String"/>
         <attribute name="sourceName" optional="YES" attributeType="String"/>
@@ -29,7 +28,7 @@
     </entity>
     <elements>
         <element name="ArticleEntity" positionX="-63" positionY="-9" width="128" height="164"/>
-        <element name="Bookmark" positionX="54" positionY="108" width="128" height="164"/>
+        <element name="Bookmark" positionX="54" positionY="108" width="128" height="149"/>
         <element name="SourceEntity" positionX="164.6220092773438" positionY="169.7939453125" width="128" height="88"/>
     </elements>
 </model>
