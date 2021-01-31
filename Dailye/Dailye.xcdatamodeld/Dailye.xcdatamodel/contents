@@ -14,12 +14,20 @@
     <entity name="Bookmark" representedClassName="Bookmark" syncable="YES" codeGenerationType="class">
         <attribute name="author" optional="YES" attributeType="String"/>
         <attribute name="bookmarkDescription" optional="YES" attributeType="String"/>
+        <attribute name="password" optional="YES" attributeType="String"/>
         <attribute name="publishedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="sourceId" optional="YES" attributeType="String"/>
         <attribute name="sourceName" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
         <attribute name="urlToImage" optional="YES" attributeType="String"/>
+        <relationship name="notes" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="bookmark" inverseEntity="Note"/>
+    </entity>
+    <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="class">
+        <attribute name="content" attributeType="String" defaultValueString=""/>
+        <attribute name="createDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="editDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="bookmark" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Bookmark" inverseName="notes" inverseEntity="Bookmark"/>
     </entity>
     <entity name="SourceEntity" representedClassName="SourceEntity" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String"/>
@@ -27,8 +35,9 @@
         <relationship name="articles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ArticleEntity" inverseName="source" inverseEntity="ArticleEntity"/>
     </entity>
     <elements>
-        <element name="ArticleEntity" positionX="-63" positionY="-9" width="128" height="164"/>
-        <element name="Bookmark" positionX="54" positionY="108" width="128" height="149"/>
-        <element name="SourceEntity" positionX="164.6220092773438" positionY="169.7939453125" width="128" height="88"/>
+        <element name="ArticleEntity" positionX="157.01708984375" positionY="-121.7604675292969" width="128" height="164"/>
+        <element name="Bookmark" positionX="134.1303100585938" positionY="175.0164489746094" width="128" height="193"/>
+        <element name="SourceEntity" positionX="336.1211547851563" positionY="30.56536865234375" width="128" height="88"/>
+        <element name="Note" positionX="-61.72998046875" positionY="233.8059997558594" width="128" height="103"/>
     </elements>
 </model>

@@ -6,7 +6,7 @@ class BookmarkListViewModel: ObservableObject {
     private var context: NSManagedObjectContext
     
     init() {
-        context = PersistenceController.shared.container.newBackgroundContext()
+        context = PersistenceController.shared.container.viewContext
         fetchBookmarks()
     }
     
