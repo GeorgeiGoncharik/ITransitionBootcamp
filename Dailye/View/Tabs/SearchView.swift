@@ -2,46 +2,27 @@ import SwiftUI
 import CoreData
 
 struct SearchView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    @StateObject private var viewModel: SearchViewModel
-    
-    init() {
-        _viewModel = StateObject(wrappedValue: SearchViewModel())
-    }
+    @StateObject private var viewModel: SearchViewModel = SearchViewModel()
     
     var body: some View {
         NavigationView{
-            VStack{
+            ScrollView{
                 CardTextField(
                     textField: TextField("", text: $viewModel.search),
                     imageName: "magnifyingglass"
                 )
                 .padding()
                 
-                ScrollView{
-                    LazyVStack {
-                        ForEach(viewModel.articles, id: \.self){ article in
-                            NavigationLink(destination: ArticleDetail(article: article)){
-                                ArticleRow(article: article)
-                            }
-                        }.padding()
-                    }
+                LazyVStack {
+                    ForEach(viewModel.articles, id: \.self){ article in
+                        NavigationLink(destination: ArticleDetail(article: article)){
+                            ArticleRow(article: article)
+                        }
+                    }.padding()
                 }
             }
             .navigationTitle("Search")
         }
-    }
-}
-
-private extension SearchView{
-    var allNewsSection: some View {
-        return
-            ArticleList(
-                request: EverythingRequest(
-                    sortingStrategy: .popularity,
-                    pageSize: 100
-                )
-            )
     }
 }
 

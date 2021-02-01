@@ -14,22 +14,6 @@ struct BookmarkDetail: View {
             ScrollView{
                 cardBody
                 
-                if (viewModel.bookmark.password == nil) {
-                    HStack{
-                        SecureField("password (optional)", text: $viewModel.passwordField){
-                            viewModel.passwordField.isEmpty ? background(Color.red) : background(Color.primary)
-                        }
-                            .padding()
-                            .cardLook()
-                        
-                        Button(action: {}){
-                            Image(systemName: "lock.open")
-                                .padding()
-                                .cardLook()
-                        }
-                    }.padding()
-                }
-                
                 ForEach(viewModel.notes, id: \.self){ note in
                     NavigationLink(
                         destination: NoteDetail(note: note),
@@ -53,16 +37,28 @@ struct BookmarkDetail: View {
                 }
             }
         }
-        .blur(radius: viewModel.state == AuthenticationState.loggedout ? 5.0 : 0.0)
+        .blur(radius: viewModel.state == AuthenticationState.loggedout ? 10.0 : 0.0)
         .disabled(viewModel.state == AuthenticationState.loggedout)
         .navigationTitle(viewModel.bookmark.title ?? "")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(trailing:
-            Button(action: {
-                presentation.wrappedValue.dismiss()
-                viewModel.deleteBookmark()
-            }) {
-                Image(systemName: "bookmark.slash")
+            HStack{
+                Button(action: {
+                    presentation.wrappedValue.dismiss()
+                    viewModel.toggleNotePrivacy()
+                }) {
+                    Image(systemName: viewModel.bookmark.isSecured
+                        ? "checkmark.shield.fill"
+                        : "lock")
+                }
+                
+                Button(action: {
+                    presentation.wrappedValue.dismiss()
+                    viewModel.deleteBookmark()
+                }) {
+                    Image(systemName: "bookmark.slash")
+                        .padding(.leading)
+                }
             }
         )
     }

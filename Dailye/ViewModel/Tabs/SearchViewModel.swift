@@ -6,7 +6,7 @@ class SearchViewModel: ObservableObject {
     @Published private(set) var state = State.ready
     @Published var search: String = ""
     
-    private var scheduler: DispatchQueue = DispatchQueue(label: "SearchViewModel")
+    private var scheduler: DispatchQueue = DispatchQueue(label: "SearchViewModel", qos: .userInteractive)
     private let articleFetcher: ArticleFetchable = ArticleFetcher()
     private var disposables = Set<AnyCancellable>()
     

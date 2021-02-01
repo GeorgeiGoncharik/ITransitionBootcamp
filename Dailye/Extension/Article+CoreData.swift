@@ -15,3 +15,14 @@ extension Article{
         return bookmark
     }
 }
+
+extension NSManagedObjectContext{
+    func saveWithoutTry() {
+        do {
+            try self.save()
+        } catch {
+            let nsError = error as NSError
+            print("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+}

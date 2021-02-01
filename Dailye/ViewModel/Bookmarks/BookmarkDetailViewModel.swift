@@ -3,9 +3,8 @@ import CoreData
 import LocalAuthentication
 
 class BookmarkDetailViewModel: ObservableObject {
-    @Published var notes = [Note]()
-    @Published var bookmark: Bookmark
-    @Published var passwordField = ""
+    @Published private(set) var notes = [Note]()
+    @Published private(set) var bookmark: Bookmark
     private var context: NSManagedObjectContext
     private var LAcontext: LAContext
         
@@ -15,30 +14,25 @@ class BookmarkDetailViewModel: ObservableObject {
         context = PersistenceController.shared.container.viewContext
         LAcontext = LAContext()
         self.bookmark = bookmark
-        authenticate()
+        if self.bookmark.isSecured == true{
+            authenticate()
+        } else {
+            state = .loggedin
+        }
+        convertNotesToArray()
     }
     
     func deleteBookmark() {
         context.delete(bookmark)
-        do {
-            try context.save()
-        } catch {
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
+        context.saveWithoutTry()
     }
     
     func addNote(){
         let note = Note(context: context)
         note.createDate = Date()
         bookmark.addToNotes(note)
-        do {
-            try context.save()
-            convertNotesToArray()
-        } catch {
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
+        context.saveWithoutTry()
+        convertNotesToArray()
     }
     
     func authenticate() {
@@ -59,6 +53,11 @@ class BookmarkDetailViewModel: ObservableObject {
         } else {
             print(error?.localizedDescription ?? "Can't evaluate policy")
         }
+    }
+    
+    func toggleNotePrivacy(){
+        self.bookmark.isSecured = bookmark.isSecured ? false : true
+        context.saveWithoutTry()
     }
     
     func convertNotesToArray(){

@@ -2,27 +2,22 @@ import Foundation
 import CoreData
 
 class ArticleSharedViewModel: ObservableObject {
-    @Published var article: Article
-    @Published var isBookmarked: Bool = false
+    @Published private(set) var article: Article
+    @Published private(set) var isBookmarked: Bool = false
     private var context: NSManagedObjectContext
     
     init(article: Article) {
         self.article = article
         context = PersistenceController.shared.container.newBackgroundContext()
     }
-    
+        
     func addBookmark(){
         guard fetchBookmark() == nil else {
             return
         }
         _ = article.asBookmark(with: context)
-        do {
-            try context.save()
-            isBookmarked = true
-        } catch {
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
+        context.saveWithoutTry()
+        isBookmarked = true
     }
     
     func deleteBookmark() {
@@ -30,13 +25,8 @@ class ArticleSharedViewModel: ObservableObject {
             return
         }
         context.delete(bookmark)
-        do {
-            try context.save()
-            isBookmarked = false
-        } catch {
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
+        context.saveWithoutTry()
+        isBookmarked = false
     }
     
     func checkIfBookmark() {

@@ -73,9 +73,10 @@ struct ArticleRow: View {
                 .padding(.horizontal)
         }
         .sheet(isPresented: $showShareSheet, content: {
-            ShareSheet(activityItems: [URL(string: viewModel.article.url ?? "")])
+            ShareSheet(activityItems: [URL(string: viewModel.article.url ?? "") as Any])
         })
         .onAppear{viewModel.checkIfBookmark()}
+        .cardText()
         .cardLook()
     }
         

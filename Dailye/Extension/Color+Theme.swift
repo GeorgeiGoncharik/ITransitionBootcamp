@@ -8,7 +8,7 @@ extension Color {
     static let textColor = Color(red: 78/255, green: 78/255, blue: 80/255)
     
     //dark theme
-    static let darkBackground = Color(red: 78/255, green: 78/255, blue: 80/255)
+    static let darkBackground = Color(red: 28/255, green: 28/255, blue: 30/255)
     static let darkShadow = Color(red: 163/255, green: 177/255, blue: 198/255)
     static let darkTextColour = Color(red: 217/255, green: 217/255, blue: 217/255)
     

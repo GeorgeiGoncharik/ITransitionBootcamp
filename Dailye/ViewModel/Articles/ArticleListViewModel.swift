@@ -21,7 +21,6 @@ class ArticleListViewModel: ObservableObject{
     }
         
     func load(){
-        assert(Thread.isMainThread)
         self.state = .loading(
             articleFetcher.getArticleListResponse(with: request)
                 .map{ response in response.articles ?? [] }
@@ -46,13 +45,11 @@ class ArticleListViewModel: ObservableObject{
     }
     
     func loadIfNeeded() {
-        assert(Thread.isMainThread)
         guard case .ready = self.state else { return }
         self.load()
     }
     
     func loadMore() {
-        assert(Thread.isMainThread)
         request.nextPage()
         self.load()
     }

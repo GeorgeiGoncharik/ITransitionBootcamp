@@ -16,11 +16,11 @@ struct TopHeadlinesView: View {
                     )
                 }
             }
-            .navigationBarTitle("Top headlines.")
+            .navigationBarTitle("Top headlines")
         }
     }
     
-    var categoriesTabs: some View{
+    private var categoriesTabs: some View{
         ScrollView (.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(Categories.allCases.indices) {index in
