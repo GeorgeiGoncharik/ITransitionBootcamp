@@ -58,7 +58,6 @@ struct ArticleRow: View {
                                     ? "bookmark.fill"
                                     : "bookmark")
                             }
-                            .animation(.easeInOut)
                             Button(action: {
                                 showShareSheet = true
                             }) {

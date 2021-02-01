@@ -2,7 +2,7 @@ import Foundation
 import CoreData
 
 class NoteDetailViewModel: ObservableObject {
-    @Published private(set) var note: Note
+    @Published var note: Note
     
     private var context: NSManagedObjectContext
     

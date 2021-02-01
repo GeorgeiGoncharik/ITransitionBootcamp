@@ -4,7 +4,7 @@ struct NoteRow: View {
     @StateObject var note: Note
     
     var body: some View {
-        VStack(salignment: .leading){
+        VStack(alignment: .leading){
             Text("\(note.content ?? "")")
             Divider().padding(.horizontal)
             HStack{
