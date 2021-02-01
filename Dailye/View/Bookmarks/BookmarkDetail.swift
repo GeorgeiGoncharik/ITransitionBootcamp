@@ -53,6 +53,8 @@ struct BookmarkDetail: View {
                 }
             }
         }
+        .blur(radius: viewModel.state == AuthenticationState.loggedout ? 5.0 : 0.0)
+        .disabled(viewModel.state == AuthenticationState.loggedout)
         .navigationTitle(viewModel.bookmark.title ?? "")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(trailing:

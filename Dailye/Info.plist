@@ -41,6 +41,8 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We will use this to enhance the news&apos; feed.</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Use Face ID instead of a password to access your notes.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
