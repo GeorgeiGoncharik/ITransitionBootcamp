@@ -51,17 +51,13 @@
 		047C343125C37DA600C00485 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047C343025C37DA600C00485 /* ShareSheet.swift */; };
 		047C343725C4A34600C00485 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047C343625C4A34600C00485 /* FloatingButton.swift */; };
 		047C343B25C4A50900C00485 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047C343A25C4A50900C00485 /* MainButton.swift */; };
+		047E351925C8164C00F685EA /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E351825C8164C00F685EA /* OnboardingView.swift */; };
 		049DE74C25C6AE3E00AC26B1 /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DE74B25C6AE3E00AC26B1 /* NoteRow.swift */; };
 		049DE75225C6BE6200AC26B1 /* Binding+NilProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049DE75125C6BE6200AC26B1 /* Binding+NilProxy.swift */; };
-		04AA1BC525BB96C500618450 /* ArticleEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AA1BC125BB96C500618450 /* ArticleEntity+CoreDataClass.swift */; };
-		04AA1BC625BB96C500618450 /* ArticleEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AA1BC225BB96C500618450 /* ArticleEntity+CoreDataProperties.swift */; };
-		04AA1BC725BB96C500618450 /* SourceEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AA1BC325BB96C500618450 /* SourceEntity+CoreDataClass.swift */; };
-		04AA1BC825BB96C500618450 /* SourceEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AA1BC425BB96C500618450 /* SourceEntity+CoreDataProperties.swift */; };
 		04BEC2B525B8F7E900EA0A1D /* TopHeadlinesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEC2B425B8F7E900EA0A1D /* TopHeadlinesViewModel.swift */; };
 		04BEC2B825BA4C2F00EA0A1D /* ArticleFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEC2B725BA4C2F00EA0A1D /* ArticleFetcher.swift */; };
 		04BEC2BB25BA4CE100EA0A1D /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEC2BA25BA4CE100EA0A1D /* Parsing.swift */; };
 		04BEC2BE25BA526D00EA0A1D /* ArticleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BEC2BD25BA526D00EA0A1D /* ArticleError.swift */; };
-		04C394B525BB9DE90099A309 /* DataImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C394B425BB9DE90099A309 /* DataImporter.swift */; };
 		04CCF573259AA28B0019654A /* DailyeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CCF572259AA28B0019654A /* DailyeApp.swift */; };
 		04CCF577259AA28F0019654A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CCF576259AA28F0019654A /* Assets.xcassets */; };
 		04CCF57A259AA28F0019654A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CCF579259AA28F0019654A /* Preview Assets.xcassets */; };
@@ -119,17 +115,13 @@
 		047C343025C37DA600C00485 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		047C343625C4A34600C00485 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		047C343A25C4A50900C00485 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		047E351825C8164C00F685EA /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		049DE74B25C6AE3E00AC26B1 /* NoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
 		049DE75125C6BE6200AC26B1 /* Binding+NilProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+NilProxy.swift"; sourceTree = "<group>"; };
-		04AA1BC125BB96C500618450 /* ArticleEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		04AA1BC225BB96C500618450 /* ArticleEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		04AA1BC325BB96C500618450 /* SourceEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SourceEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		04AA1BC425BB96C500618450 /* SourceEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SourceEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		04BEC2B425B8F7E900EA0A1D /* TopHeadlinesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeadlinesViewModel.swift; sourceTree = "<group>"; };
 		04BEC2B725BA4C2F00EA0A1D /* ArticleFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleFetcher.swift; sourceTree = "<group>"; };
 		04BEC2BA25BA4CE100EA0A1D /* Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
 		04BEC2BD25BA526D00EA0A1D /* ArticleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleError.swift; sourceTree = "<group>"; };
-		04C394B425BB9DE90099A309 /* DataImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataImporter.swift; sourceTree = "<group>"; };
 		04CCF56F259AA28B0019654A /* Dailye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dailye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04CCF572259AA28B0019654A /* DailyeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyeApp.swift; sourceTree = "<group>"; };
 		04CCF576259AA28F0019654A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -164,7 +156,6 @@
 				0401F41225A7B90E00147FC9 /* Languages.swift */,
 				0401F40625A7B2DC00147FC9 /* Categories.swift */,
 				0401F40A25A7B69B00147FC9 /* SortBys.swift */,
-				042110AD25BF74080092822C /* Defaults.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -237,7 +228,6 @@
 		0415DB33259F518F00E850B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				04AA1BCA25BB96CB00618450 /* CoreData */,
 				04BEC2C025BA557400EA0A1D /* Network */,
 				0401F40925A7B5E100147FC9 /* Constants */,
 				0415DB37259F55FA00E850B7 /* Article.swift */,
@@ -255,6 +245,7 @@
 				0412450B25B74A3B00892310 /* Helpers */,
 				0412450925B7499F00892310 /* Tabs */,
 				0419BD7125B38E6200942084 /* AppView.swift */,
+				047E351825C8164C00F685EA /* OnboardingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -285,8 +276,8 @@
 		0418D78125C7669E00A70B68 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				049DE74B25C6AE3E00AC26B1 /* NoteRow.swift */,
 				0452F5BC25C74B2200BDD1A8 /* NoteDetail.swift */,
+				049DE74B25C6AE3E00AC26B1 /* NoteRow.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -309,18 +300,6 @@
 				045BF27B25C4B37300E679A9 /* IconAndTextButton.swift */,
 			);
 			path = FAB;
-			sourceTree = "<group>";
-		};
-		04AA1BCA25BB96CB00618450 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				04AA1BC125BB96C500618450 /* ArticleEntity+CoreDataClass.swift */,
-				04AA1BC225BB96C500618450 /* ArticleEntity+CoreDataProperties.swift */,
-				04AA1BC325BB96C500618450 /* SourceEntity+CoreDataClass.swift */,
-				04AA1BC425BB96C500618450 /* SourceEntity+CoreDataProperties.swift */,
-				04C394B425BB9DE90099A309 /* DataImporter.swift */,
-			);
-			path = CoreData;
 			sourceTree = "<group>";
 		};
 		04BEC2C025BA557400EA0A1D /* Network */ = {
@@ -360,12 +339,13 @@
 				0415DB3D259FC4F600E850B7 /* View */,
 				0415DB33259F518F00E850B7 /* Model */,
 				04CCF572259AA28B0019654A /* DailyeApp.swift */,
-				04CCF576259AA28F0019654A /* Assets.xcassets */,
 				04CCF57B259AA28F0019654A /* Persistence.swift */,
+				042110AD25BF74080092822C /* Defaults.swift */,
+				04CCF576259AA28F0019654A /* Assets.xcassets */,
 				04CCF580259AA28F0019654A /* Info.plist */,
+				0415DB55259FE49E00E850B7 /* Keys.plist */,
 				04CCF57D259AA28F0019654A /* Dailye.xcdatamodeld */,
 				04CCF578259AA28F0019654A /* Preview Content */,
-				0415DB55259FE49E00E850B7 /* Keys.plist */,
 			);
 			path = Dailye;
 			sourceTree = "<group>";
@@ -490,7 +470,6 @@
 				0401F3FF25A3B7C500147FC9 /* ArticleDetail.swift in Sources */,
 				047C343B25C4A50900C00485 /* MainButton.swift in Sources */,
 				04F6A4BE25C1F31000CA70A8 /* BookmarkDetail.swift in Sources */,
-				04C394B525BB9DE90099A309 /* DataImporter.swift in Sources */,
 				045BF27C25C4B37300E679A9 /* IconAndTextButton.swift in Sources */,
 				04BEC2BB25BA4CE100EA0A1D /* Parsing.swift in Sources */,
 				0419BD6225B079AA00942084 /* Color+Theme.swift in Sources */,
@@ -504,15 +483,14 @@
 				042110AE25BF74080092822C /* Defaults.swift in Sources */,
 				042110AB25BF725B0092822C /* SettingsViewModel.swift in Sources */,
 				040DF0D025C2216F00880652 /* Date+DateFormatter.swift in Sources */,
+				047E351925C8164C00F685EA /* OnboardingView.swift in Sources */,
 				04BEC2B525B8F7E900EA0A1D /* TopHeadlinesViewModel.swift in Sources */,
 				0452F5C025C74B4A00BDD1A8 /* NoteDetailViewModel.swift in Sources */,
-				04AA1BC525BB96C500618450 /* ArticleEntity+CoreDataClass.swift in Sources */,
 				0415DB52259FC94700E850B7 /* URL+NewsAPI.swift in Sources */,
 				0415DB43259FC5A200E850B7 /* ArticleListViewModel.swift in Sources */,
 				0415DB3B259F563600E850B7 /* Source.swift in Sources */,
 				0411BA8D25C77F5500ECD788 /* AuthenticationState.swift in Sources */,
 				0419BD5425AEF14500942084 /* WebView.swift in Sources */,
-				04AA1BC825BB96C500618450 /* SourceEntity+CoreDataProperties.swift in Sources */,
 				0419BD7B25B3902800942084 /* SettingsView.swift in Sources */,
 				0419BD5725AEFD3900942084 /* CategoryTagView.swift in Sources */,
 				046EEF4025BA66B60013884B /* SearchViewModel.swift in Sources */,
@@ -521,7 +499,6 @@
 				04CCF573259AA28B0019654A /* DailyeApp.swift in Sources */,
 				04CCF57F259AA28F0019654A /* Dailye.xcdatamodeld in Sources */,
 				0419BD7225B38E6200942084 /* AppView.swift in Sources */,
-				04AA1BC725BB96C500618450 /* SourceEntity+CoreDataClass.swift in Sources */,
 				0401F41325A7B90E00147FC9 /* Languages.swift in Sources */,
 				04F6A4B825C1C15600CA70A8 /* BookmarkRow.swift in Sources */,
 				0415DB5A259FEEBB00E850B7 /* ArticleRow.swift in Sources */,
@@ -530,7 +507,6 @@
 				04F6A4BB25C1EF5000CA70A8 /* BookmarkDetailViewModel.swift in Sources */,
 				0452F5BD25C74B2200BDD1A8 /* NoteDetail.swift in Sources */,
 				0419BD6C25B07B3F00942084 /* CardText.swift in Sources */,
-				04AA1BC625BB96C500618450 /* ArticleEntity+CoreDataProperties.swift in Sources */,
 				04E148AF25B8841A0051D837 /* CardTextField.swift in Sources */,
 				049DE75225C6BE6200AC26B1 /* Binding+NilProxy.swift in Sources */,
 				0415DB4E259FC85E00E850B7 /* JSONSchemaSupport.swift in Sources */,
