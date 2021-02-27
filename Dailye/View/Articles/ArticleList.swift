@@ -1,25 +1,25 @@
 import SwiftUI
 
 struct ArticleList: View {
-    var title: String
-    @StateObject var viewModel: ArticleListViewModel
+    @State private var title: String
+    @StateObject private var viewModel: ArticleListViewModel
     
     init(request: Requestable, title: String = "") {
         _viewModel = StateObject(wrappedValue: ArticleListViewModel(request: request))
-        self.title = title
+        _title = State(wrappedValue: title)
     }
     
     var body: some View {
         if(!title.isEmpty){
-            content()
+            content
                 .navigationTitle(title.capitalized)
                 .navigationBarTitleDisplayMode(.large)
         } else {
-            content()
+            content
         }
     }
     
-    func content() -> some View{
+    private var content: some View{
         return ScrollView{
             LazyVStack {
                 
